@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+    input{
+      margin: 10px;
+    }
+    form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    form div{
+      display: flex;
+      flex-direction: column;
+      align-items: center
+    }
+  </style>
+
+
+  <form action="" id="myForm">
+    <div class="log-data">
+      <input type="text" placeholder="name">
+      <input type="number" placeholder="age">
+      <button type="button" id="logButton" onClick="logFunction()">Log</button>
+    </div>
+    <div class="extra-data">
+      <input type="date">
+      <button type="submit" id="submitButton">Submit</button>
+    </div>
+  </form>
+
+
+  <script>
+    document.querySelector("#logButton").addEventListener('submit', function(event){
+      event.preventDefault();
+
+     
+
+    });
+
+    function logFunction(){
+        console.log("log clicked");
+      }
+  </script>
+  
+</body>
+</html>
