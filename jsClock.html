@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toza Time</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="clock-container">
+        <div class="container">
+            <div class="clock">
+                <div class="clock-inner">
+                    <span id="hrs"></span>
+                    <span>:</span>
+                    <span id="min"></span>
+                    <span>:</span>
+                    <span id="sec"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script>
+        setInterval(()=>{
+            const hours = document.getElementById("hrs");
+            const minutes = document.getElementById("min");
+            const seconds = document.getElementById("sec");
+
+            const currentTime = new Date();
+
+            hours.innerHTML = (currentTime.getHours()<10?"0":"") + currentTime.getHours();
+            minutes.innerHTML = (currentTime.getMinutes()<10?"0":"") + currentTime.getMinutes();
+            seconds.innerHTML = (currentTime.getSeconds()<10?"0":"") + currentTime.getSeconds();
+        }, 1000)
+    </script>
+
+</body>
+</html>
