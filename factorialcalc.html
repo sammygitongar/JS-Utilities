@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+</head>
+<body>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .factorial-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(35deg, rgb(226, 164, 164), rgb(241, 241, 152))
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #00000051;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .container h3{
+            font-size: 22px;
+            color: darkblue;
+        }
+
+        .container input{
+            margin: 10px;
+            padding: 5px;
+            font-size: 20px;
+        }
+
+        .container button{
+            padding: 5px 15px;
+            font-size: 16px;
+            background: rgb(152, 57, 57);
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: .4s ease;
+        }
+
+        .answer{
+            background: rgba(255, 255, 255, 0.591);
+            width: 100px;
+            height: 30px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid blue;
+        }
+
+        .container button:hover{
+            background: rgb(215, 11, 11);
+        }
+    </style>
+   <div class="factorial-container">
+    <div class="container">
+        <h3>Factorial Calculator</h3>
+        <input type="number" id="fnumber" name="fnumber" placeholder="Enter a Positive Interger">
+        <div class="answer">
+            <p id="fanswer"></p>
+        </div>
+        <button onclick="calcFactorial()">Calculate</button>
+    </div>
+   </div>
+
+
+
+
+   <script>
+     function calcFactorial(){
+        const fnumber = document.getElementById("fnumber");
+        const fanswer = document.getElementById("fanswer");
+
+
+        const factorial = function fac(n){
+            return n < 2 ? 1 : n * fac(n-1);
+        }
+
+        fanswer.innerHTML = factorial(fnumber.value);
+     }
+   </script>
+    
+</body>
+</html>
