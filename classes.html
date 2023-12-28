@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>East African Countries</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<div class="classes-holder">
+    <table>
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Capital</th>
+                <th>Population (million)</th>
+                <th>GDP (billion USD)</th>
+            </tr>
+        </thead>
+        <tbody id="countries"></tbody>
+    </table>
+</div>
+
+<script>
+    class EAfrica {
+        constructor(name, capital, population, gdp) {
+            this.name = name;
+            this.capital = capital;
+            this.population = population;
+            this.gdp = gdp;
+        }
+    }
+
+    const countriesArray = [
+        new EAfrica("Kenya", "Nairobi", 53771296, 95.5),
+        new EAfrica("Rwanda", "Kigali", 12952218, 10.6),
+        new EAfrica("Somalia", "Mogadishu", 15974218, 6.8),
+        new EAfrica("Sudan", "Khartoum", 44909353, 40.0),
+        new EAfrica("Eritrea", "Asmara", 3546421, 3.8),
+        new EAfrica("Djibouti", "Djibouti City", 990183, 2.4),
+        new EAfrica("Burundi", "Bujumbura", 11890784, 3.0),
+    ];
+
+    let countriesHTML = "";
+
+    for (const country of countriesArray) {
+        countriesHTML += `
+            <tr>
+                <td>${country.name}</td>
+                <td>${country.capital}</td>
+                <td>${country.population}</td>
+                <td>${country.gdp}</td>
+            </tr>
+        `;
+    }
+
+    // Display the information in the "countries" tbody
+    document.getElementById("countries").innerHTML = countriesHTML;
+</script>
+
+</body>
+</html>
