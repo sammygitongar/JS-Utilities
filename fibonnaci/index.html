@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series - Array</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Get Fibonacci</h2>
+        <input id="fibo" type="number" placeholder="Enter a Value">
+        <button onclick="getFibonacci()">Submit</button>
+        <div id="display"></div>
+    </div>
+
+    <script>
+        function getFibonacci() {
+            const fibo = document.getElementById("fibo");
+            const display = document.getElementById("display");
+            const newFibo = parseInt(fibo.value);
+
+            if (newFibo < 1 || isNaN(newFibo)) {
+                console.log("Please Enter a positive integer");
+                display.innerHTML = "Please Enter a positive integer";
+                return;
+            }
+
+            let array = [0, 1];
+
+            for (let i = 2; i <= newFibo; i++) {
+                array[i] = array[i - 1] + array[i - 2];
+            }
+
+            display.innerHTML = array.join(', ');
+        }
+    </script>
+</body>
+</html>
